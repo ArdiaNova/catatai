@@ -8,20 +8,11 @@ Language: **Bahasa Indonesia** narration, **English subtitles** on screen
 ## 0. Pre-flight (do this before opening the recorder)
 
 - [ ] Delete the test transaction so `/ringkasan` starts clean.
-      **Ganti `<nomor-demo>` dengan nomor WhatsApp demo — jangan ditulis apa adanya.**
       ```bash
       cd /home/nino/Documents/project/hackathon/celebral-valley
-      DEMO_NUMBER=<nomor-demo> .venv/bin/python - <<'PY'
-      from dotenv import load_dotenv; load_dotenv(".env")
-      import os
-      from supabase import create_client
-      sb = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_KEY"])
-      owner = sb.table("owners").select("id").eq("channel", "whatsapp").eq("external_id", os.environ["DEMO_NUMBER"]).execute().data[0]
-      sb.table("transactions").delete().eq("owner_id", owner["id"]).execute()
-      sb.table("pending_confirmations").delete().eq("owner_id", owner["id"]).execute()
-      print("demo data cleared for", owner["id"])
-      PY
+      ./demo_reset.sh
       ```
+      Script ini otomatis memakai nomor pertama di `WHATSAPP_ALLOWED_NUMBERS`. Kalau mau nomor lain: `./demo_reset.sh 6285xxxx`.
 - [ ] `https://catatai.ardianova.com/health` returns `{"ok":true}`.
 - [ ] WhatsApp is logged in on the phone with the **demo number** (the owner number in `WHATSAPP_ALLOWED_NUMBERS`).
 - [ ] The chat with **+62 851-5806-4660** is open and empty (or archive old messages).
