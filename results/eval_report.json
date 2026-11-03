@@ -1,0 +1,131 @@
+{
+  "n_notas": 15,
+  "field_accuracy": {
+    "name": 0.951,
+    "qty": 0.951,
+    "unit_price": 0.976,
+    "subtotal": 0.951
+  },
+  "overall_field_accuracy": 0.957,
+  "total_accuracy": 0.933,
+  "type_accuracy": 1.0,
+  "item_count_accuracy": 1.0,
+  "confidence": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "tp": 3,
+    "fp": 3,
+    "fn": 0
+  },
+  "latency_avg_s": 21.4,
+  "tokens_in": 74863,
+  "tokens_out": 38238,
+  "cost_usd": 0.2561,
+  "rows": [
+    {
+      "file": "001.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 10.4
+    },
+    {
+      "file": "002.jpg",
+      "items": "2/2",
+      "total": true,
+      "type": true,
+      "latency_s": 12.4
+    },
+    {
+      "file": "003.jpg",
+      "items": "3/3",
+      "total": false,
+      "type": true,
+      "latency_s": 77.8
+    },
+    {
+      "file": "004.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 30.0
+    },
+    {
+      "file": "005.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 9.9
+    },
+    {
+      "file": "006.jpg",
+      "items": "2/2",
+      "total": true,
+      "type": true,
+      "latency_s": 11.7
+    },
+    {
+      "file": "007.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 17.2
+    },
+    {
+      "file": "008.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 27.4
+    },
+    {
+      "file": "009.jpg",
+      "items": "2/2",
+      "total": true,
+      "type": true,
+      "latency_s": 10.3
+    },
+    {
+      "file": "010.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 29.0
+    },
+    {
+      "file": "011.jpg",
+      "items": "2/2",
+      "total": true,
+      "type": true,
+      "latency_s": 26.3
+    },
+    {
+      "file": "012.jpg",
+      "items": "2/2",
+      "total": true,
+      "type": true,
+      "latency_s": 13.3
+    },
+    {
+      "file": "013.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 20.0
+    },
+    {
+      "file": "014.jpg",
+      "items": "3/3",
+      "total": true,
+      "type": true,
+      "latency_s": 13.5
+    },
+    {
+      "file": "015.jpg",
+      "items": "4/4",
+      "total": true,
+      "type": true,
+      "latency_s": 12.1
+    }
+  ]
+}

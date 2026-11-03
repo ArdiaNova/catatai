@@ -1,0 +1,18 @@
+{
+  "_note": "Maps each photo file to the nota id in truth.json. The photo order does not match the xlsx row order: photos were taken in a different sequence than the notes were written.",
+  "001.jpg": 1,
+  "002.jpg": 2,
+  "003.jpg": 10,
+  "004.jpg": 11,
+  "005.jpg": 5,
+  "006.jpg": 12,
+  "007.jpg": 13,
+  "008.jpg": 14,
+  "009.jpg": 9,
+  "010.jpg": 3,
+  "011.jpg": 4,
+  "012.jpg": 8,
+  "013.jpg": 7,
+  "014.jpg": 6,
+  "015.jpg": 15
+}

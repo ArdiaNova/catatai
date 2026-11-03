@@ -1,0 +1,397 @@
+{
+  "source": "nota_evaluasi_15.xlsx",
+  "notes": "15 synthetic handwritten notas written by 3 people (A, B, C). Totals in the xlsx are written in thousands (e.g. 123 = 123000).",
+  "notas": [
+    {
+      "id": 1,
+      "file": "001.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Beras",
+          "qty": 5,
+          "unit_price": 14000,
+          "subtotal": 70000
+        },
+        {
+          "name": "Minyak goreng",
+          "qty": 2,
+          "unit_price": 18000,
+          "subtotal": 36000
+        },
+        {
+          "name": "Gula",
+          "qty": 1,
+          "unit_price": 17000,
+          "subtotal": 17000
+        }
+      ],
+      "adjustments": [],
+      "total": 123000
+    },
+    {
+      "id": 2,
+      "file": "002.jpg",
+      "type": "purchase",
+      "items": [
+        {
+          "name": "Indomie goreng",
+          "qty": 2,
+          "unit_price": 115000,
+          "subtotal": 230000
+        },
+        {
+          "name": "Teh celup",
+          "qty": 3,
+          "unit_price": 12500,
+          "subtotal": 37500
+        }
+      ],
+      "adjustments": [],
+      "total": 267500
+    },
+    {
+      "id": 3,
+      "file": "003.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Kopi susu",
+          "qty": 12,
+          "unit_price": 15000,
+          "subtotal": 180000
+        },
+        {
+          "name": "Es teh",
+          "qty": 8,
+          "unit_price": 5000,
+          "subtotal": 40000
+        },
+        {
+          "name": "Roti bakar",
+          "qty": 5,
+          "unit_price": 12000,
+          "subtotal": 60000
+        }
+      ],
+      "adjustments": [],
+      "total": 280000
+    },
+    {
+      "id": 4,
+      "file": "004.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Nasi goreng",
+          "qty": 3,
+          "unit_price": 18000,
+          "subtotal": 54000
+        },
+        {
+          "name": "Es jeruk",
+          "qty": 3,
+          "unit_price": 6000,
+          "subtotal": 18000
+        }
+      ],
+      "adjustments": [],
+      "total": 72000
+    },
+    {
+      "id": 5,
+      "file": "005.jpg",
+      "type": "purchase",
+      "items": [
+        {
+          "name": "Susu UHT",
+          "qty": 6,
+          "unit_price": 18500,
+          "subtotal": 111000
+        },
+        {
+          "name": "Gula pasir",
+          "qty": 5,
+          "unit_price": 16500,
+          "subtotal": 82500
+        },
+        {
+          "name": "Kopi bubuk",
+          "qty": 1,
+          "unit_price": 95000,
+          "subtotal": 95000
+        }
+      ],
+      "adjustments": [],
+      "total": 288500
+    },
+    {
+      "id": 6,
+      "file": "006.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Aqua 600ml",
+          "qty": 2,
+          "unit_price": 3000,
+          "subtotal": 6000
+        },
+        {
+          "name": "Rokok",
+          "qty": 1,
+          "unit_price": 28000,
+          "subtotal": 28000
+        },
+        {
+          "name": "Kopi sachet",
+          "qty": 5,
+          "unit_price": 2000,
+          "subtotal": 10000
+        }
+      ],
+      "adjustments": [],
+      "total": 44000
+    },
+    {
+      "id": 7,
+      "file": "007.jpg",
+      "type": "purchase",
+      "items": [
+        {
+          "name": "Telur",
+          "qty": 1.5,
+          "unit_price": 28000,
+          "subtotal": 42000
+        },
+        {
+          "name": "Tepung",
+          "qty": 2,
+          "unit_price": 13000,
+          "subtotal": 26000
+        },
+        {
+          "name": "Mentega",
+          "qty": 1,
+          "unit_price": 9000,
+          "subtotal": 9000
+        }
+      ],
+      "adjustments": [],
+      "total": null
+    },
+    {
+      "id": 8,
+      "file": "008.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Kue lapis",
+          "qty": 3,
+          "unit_price": 45000,
+          "subtotal": 135000
+        },
+        {
+          "name": "Brownies",
+          "qty": 2,
+          "unit_price": 60000,
+          "subtotal": 120000
+        }
+      ],
+      "adjustments": [
+        {
+          "label": "dp",
+          "amount": 100000
+        }
+      ],
+      "total": 255000
+    },
+    {
+      "id": 9,
+      "file": "009.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Beras",
+          "qty": 10,
+          "unit_price": 13500,
+          "subtotal": 135000
+        },
+        {
+          "name": "Minyak",
+          "qty": 3,
+          "unit_price": 17000,
+          "subtotal": 51000
+        }
+      ],
+      "adjustments": [
+        {
+          "label": "discount",
+          "amount": 6000
+        }
+      ],
+      "total": 180000
+    },
+    {
+      "id": 10,
+      "file": "010.jpg",
+      "type": "unknown",
+      "items": [
+        {
+          "name": "Daging ayam",
+          "qty": 2.5,
+          "unit_price": 38000,
+          "subtotal": 95000
+        },
+        {
+          "name": "Bawang merah",
+          "qty": 0.5,
+          "unit_price": 40000,
+          "subtotal": 20000
+        },
+        {
+          "name": "Cabai",
+          "qty": 0.25,
+          "unit_price": 60000,
+          "subtotal": 15000
+        }
+      ],
+      "adjustments": [],
+      "total": 130000
+    },
+    {
+      "id": 11,
+      "file": "011.jpg",
+      "type": "sale",
+      "items": [
+        {
+          "name": "Kopi hitam",
+          "qty": 9,
+          "unit_price": 8000,
+          "subtotal": 72000
+        },
+        {
+          "name": "Teh tarik",
+          "qty": 4,
+          "unit_price": 9000,
+          "subtotal": 36000
+        },
+        {
+          "name": "Gorengan",
+          "qty": 15,
+          "unit_price": 1500,
+          "subtotal": 22500
+        }
+      ],
+      "adjustments": [],
+      "total": 130500
+    },
+    {
+      "id": 12,
+      "file": "012.jpg",
+      "type": "unknown",
+      "items": [
+        {
+          "name": "Gula",
+          "qty": 2,
+          "unit_price": 18000,
+          "subtotal": 36000
+        },
+        {
+          "name": "Garam",
+          "qty": 3,
+          "unit_price": 3000,
+          "subtotal": 9000
+        }
+      ],
+      "adjustments": [],
+      "total": 45000
+    },
+    {
+      "id": 13,
+      "file": "013.jpg",
+      "type": "unknown",
+      "items": [
+        {
+          "name": "Mie instan",
+          "qty": 10,
+          "unit_price": 3500,
+          "subtotal": 35000
+        },
+        {
+          "name": "Telur",
+          "qty": 12,
+          "unit_price": 2500,
+          "subtotal": 30000
+        },
+        {
+          "name": "Kecap",
+          "qty": 2,
+          "unit_price": 7500,
+          "subtotal": 15000
+        }
+      ],
+      "adjustments": [],
+      "total": 80000
+    },
+    {
+      "id": 14,
+      "file": "014.jpg",
+      "type": "unknown",
+      "items": [
+        {
+          "name": "mie gr",
+          "qty": 5,
+          "unit_price": 3000,
+          "subtotal": 15000
+        },
+        {
+          "name": "sbn mandi",
+          "qty": 3,
+          "unit_price": 4500,
+          "subtotal": 13500
+        },
+        {
+          "name": "sunlight sch",
+          "qty": 4,
+          "unit_price": 1500,
+          "subtotal": 6000
+        }
+      ],
+      "adjustments": [],
+      "total": 34500
+    },
+    {
+      "id": 15,
+      "file": "015.jpg",
+      "type": "purchase",
+      "items": [
+        {
+          "name": "Kangkung",
+          "qty": 5,
+          "unit_price": 3000,
+          "subtotal": 15000
+        },
+        {
+          "name": "Tomat",
+          "qty": 2,
+          "unit_price": 12000,
+          "subtotal": 24000
+        },
+        {
+          "name": "Tahu",
+          "qty": 20,
+          "unit_price": 1000,
+          "subtotal": 20000
+        },
+        {
+          "name": "Tempe",
+          "qty": 6,
+          "unit_price": 3500,
+          "subtotal": 21000
+        }
+      ],
+      "adjustments": [],
+      "total": 80000
+    }
+  ]
+}
