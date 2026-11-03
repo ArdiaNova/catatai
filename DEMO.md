@@ -8,6 +8,7 @@ Language: **Bahasa Indonesia** narration, **English subtitles** on screen
 ## 0. Pre-flight (do this before opening the recorder)
 
 - [ ] Delete the test transaction so `/ringkasan` starts clean.
+      **Ganti `<nomor-demo>` dengan nomor WhatsApp demo — jangan ditulis apa adanya.**
       ```bash
       cd /home/nino/Documents/project/hackathon/celebral-valley
       DEMO_NUMBER=<nomor-demo> .venv/bin/python - <<'PY'
