@@ -29,26 +29,29 @@ CatatAI inverts it: the owner sends a photo, a voice note, or one sentence, and 
 
 The agent never silently saves a guessed receipt. It flags low-confidence lines with ⚠️, asks `jual` or `beli` when the type has no explicit clue on the paper, and rejects a total that does not match the line items.
 
+### Channels
+
+WhatsApp is the primary channel and the one used in the demo. A **Telegram fallback** is also implemented (`telegram_bot.py`): it uses the same `agent.handle` pipeline and the same Supabase tables, supports text, photos, and voice notes, and enforces an allowlist through `TELEGRAM_ALLOWED_IDS`.
+
+The fallback runs as a separate long-polling process (`python telegram_bot.py`). The production Docker container serves only the WhatsApp webhook, so Telegram is a local/continuity channel rather than part of the live demo.
+
 ## Architecture
 
 ```
-WhatsApp user
-    │  photo / voice / text
-    ▼
-Meta WhatsApp Cloud API
-    │  POST /webhook  (X-Hub-Signature-256 verified)
-    ▼
-FastAPI  (wa_server.py)
-    │
-    ├── voice.py        muse-voice-transcribe-1.0  (audio → text)
-    ├── core.py         muse-spark-1.3             (image/text → JSON)
-    ├── corrections.py  correction + yes/no handling
-    ├── voice_parse.py  text/voice → transaction entries
-    └── store.py        Supabase (owners, pending, transactions, items, logs)
-    │
-    ▼
-Reply on WhatsApp  →  "ya"  →  row saved in Supabase
+WhatsApp user ──► Cloud API ──► FastAPI  wa_server.py ─┐
+                                                       ├──► agent.handle
+Telegram user ──► Bot API  ──► long poll telegram_bot ┘        │
+                                                               ├── voice.py        muse-voice-transcribe-1.0
+                                                               ├── core.py         muse-spark-1.3
+                                                               ├── corrections.py  corrections + yes/no
+                                                               ├── voice_parse.py  text/voice → entries
+                                                               └── store.py        Supabase
+                                                                      │
+                                                                      ▼
+                                                          "ya" → row saved
 ```
+
+Both channels share the same pending-confirmation state and the same transaction tables, so a record started on one channel is visible on the other.
 
 Design choices worth calling out:
 
@@ -121,6 +124,12 @@ cp .env.example .env      # then fill in the values
 uvicorn wa_server:app --host 0.0.0.0 --port 8000
 ```
 
+Optional Telegram fallback, in a second terminal:
+
+```bash
+python telegram_bot.py
+```
+
 Apply `schema.sql` to Supabase before the first run.
 
 ### Environment variables
@@ -163,12 +172,14 @@ curl -s http://127.0.0.1:8000/health
 
 ```
 wa_server.py       FastAPI webhook, signature check, media download, replies
+telegram_bot.py    Telegram fallback channel (long polling, same agent/store)
 agent.py           routing, greetings, pending confirmation, voice flow
 core.py            nota prompt, extraction, validation, orientation retry, reply text
 corrections.py     edit operations and yes/no classification
 voice_parse.py     text/voice → transaction entries
 store.py           Supabase persistence, summary, model-call log
 voice.py           audio conversion + transcription
+chat.py            local CLI for testing without a messaging channel
 schema.sql         database schema
 eval/              ground truth, file map, evaluation runner
 deploy/            nginx config
@@ -177,6 +188,7 @@ deploy/            nginx config
 ## Limitations
 
 - Free-form replies require the 24-hour WhatsApp customer service window; outside it, a template message is needed.
+- The Telegram fallback is implemented and shares the same agent and database, but it is not running inside the production container. It is started separately when needed.
 - The bot reads one pending record at a time. That is deliberate, but it means two receipts sent back to back need two confirmations.
 - Handwriting quality still matters. Low-confidence items are flagged, not guessed.
 - `003.jpg` in the eval set is a known total-mismatch case; the agent flags it rather than correcting it silently.

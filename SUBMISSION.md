@@ -26,6 +26,8 @@ CatatAI removes the form. The owner opens WhatsApp — the app already on their 
 
 The agent is deliberately careful. It verifies WhatsApp webhook signatures, makes message handling idempotent, expires pending confirmations after an hour, flags low-confidence lines instead of guessing, checks quantity × unit price against each subtotal, and refuses to default an ambiguous nota to "sale".
 
+WhatsApp is the primary channel. A Telegram fallback runs the same agent pipeline and the same database, so a record started there is visible from WhatsApp.
+
 ## How it uses Meta AI models
 
 - **`muse-spark-1.3`** reads nota photos and returns structured JSON: date, sale/purchase type, items, quantity, unit, unit price, subtotal, total, confidence. It also parses typed and transcribed transactions.
@@ -33,6 +35,11 @@ The agent is deliberately careful. It verifies WhatsApp webhook signatures, make
 - **`sam-3.1`** and **`muse-image-1.0`** are scoped in the PRD for product segmentation and catalog visuals. They are roadmap items, not part of the demoed nota flow.
 
 The WhatsApp integration uses the Cloud API with a system-user token, app-level webhook subscription, and signature verification.
+
+## Channels
+
+- **WhatsApp Cloud API** — primary channel, used in the demo. Webhook with signature verification, media download, and free-form replies inside the 24-hour window.
+- **Telegram Bot API** — fallback channel via long polling. Same `agent.handle` pipeline, same Supabase tables, same allowlist model. Supports text, photos, and voice notes. Runs as a separate process, not inside the production container.
 
 ## What was hard
 
