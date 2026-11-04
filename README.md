@@ -106,7 +106,7 @@ python eval/run_eval.py
 
 ## Demo
 
-- Video: _link added after recording_
+- Video: https://youtu.be/lWIY0Qf5vCY
 - Live number: **+62 851-5806-4660** (WhatsApp)
 - **Access:** the bot answers only numbers on an allowlist (it handles real business data, and sending is limited to approved recipients). Judges: email ninoptimize@gmail.com with your WhatsApp number and I will add it, or watch the demo video.
 
