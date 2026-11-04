@@ -1,6 +1,6 @@
 # Slides for the demo video
 
-Two 1920×1080 cards for section 8 of `DEMO.md`:
+Two 1920×1080 cards for section 8 of `DEMO.local.md`:
 
 | File | Use |
 |---|---|

@@ -87,6 +87,7 @@ We evaluated the extraction path on **15 Indonesian nota photos**. Ground truth 
 | item count | — | — | 100.0% |
 
 - Overall field accuracy: **95.7%**
+- Confidence flag (low-confidence marker ⚠️): recall **1.00**, precision **0.50**. It catches every real error but also flags some correct lines, so the owner sometimes confirms a line that was fine.
 - Average latency: **21.4 s** per nota (model calls only; WhatsApp delivery excluded)
 - Tokens: 74,863 in / 38,238 out
 - Estimated model cost for the full run: **$0.2561**
@@ -107,6 +108,7 @@ python eval/run_eval.py
 
 - Video: _link added after recording_
 - Live number: **+62 851-5806-4660** (WhatsApp)
+- **Access:** the bot answers only numbers on an allowlist (it handles real business data, and sending is limited to approved recipients). Judges: email ninoptimize@gmail.com with your WhatsApp number and I will add it, or watch the demo video.
 
 The demo records the real flow end to end: greeting → photo of a real laundry nota → read-back → `ya` → saved row → `/ringkasan`.
 
@@ -197,4 +199,4 @@ deploy/            nginx config
 
 ## License
 
-Source is provided for the hackathon submission. No license is granted for redistribution of receipt images or customer data.
+Code is released under the [MIT License](LICENSE). Receipt images and customer data are not covered by that license and are not published.

@@ -70,7 +70,7 @@ The eval photos are synthetic nota created for testing. The one real receipt use
 
 ## Links
 
-- Live demo number: **+62 851-5806-4660**
+- Live demo number: **+62 851-5806-4660** (WhatsApp). Access is granted on request: the bot answers only allowlisted numbers because it handles real business data and sending is limited to approved recipients, and the judges' numbers are not known in advance. Email ninoptimize@gmail.com with a WhatsApp number and it will be added; the demo video shows the full flow.
 - Privacy policy: https://catatai.ardianova.com/privacy
 - Health check: https://catatai.ardianova.com/health
 - Video: _to be added_

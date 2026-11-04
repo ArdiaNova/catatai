@@ -20,3 +20,4 @@ setvar.sh
 *.xlsx
 .~lock.*
 *.local.md
+screens/
