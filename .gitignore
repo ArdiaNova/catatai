@@ -19,3 +19,4 @@ setvar.sh
 *.log
 *.xlsx
 .~lock.*
+*.local.md
