@@ -181,30 +181,41 @@ Show:
 
 ## 8. Evaluation + close (2:20–2:35)
 
-**On screen:** results card.
+**On screen:** `slides/eval.png` (1920×1080), then `slides/close.png`.
+
+Kartu evaluasi menampilkan:
 
 ```
-15 nota · input tidak diubah
-name / qty / subtotal   95.1%
-unit_price              97.6%
-total                   93.3%
-jenis jual/beli        100.0%
-latency rata-rata       21.4 s
+HASIL EVALUASI
+15 nota sintetis · input tidak diubah
+
+Akurasi field            95.7%
+name / qty / subtotal    95.1%
+unit_price               97.6%
+total                    93.3%
+jenis jual/beli         100.0%
+jumlah item             100.0%
+
+Latency rata-rata        21.4 s
+Biaya 15 nota            $0.2561
 ```
 
 **Voice-over:**
-> "Di 15 nota uji, akurasi field 95,7 persen, jenis transaksi 100 persen. Yang ragu ditandai, bukan ditebak."
+> "Di 15 nota sintetis, akurasi field 95,7 persen, jenis transaksi 100 persen. Yang ragu ditandai, bukan ditebak."
 
 **Subtitle:**
-> "On 15 test receipts: 95.7% field accuracy, 100% transaction-type accuracy. Uncertain lines are flagged, not guessed."
+> "On 15 synthetic receipts: 95.7% field accuracy, 100% transaction-type accuracy. Uncertain lines are flagged, not guessed."
 
-**Final card:**
+**Final card:** `slides/close.png`
 
 ```
 CatatAI
+WhatsApp back-office untuk UMKM Indonesia
 catatai.ardianova.com
 +62 851-5806-4660
 ```
+
+Sumber HTML dan cara render ulang ada di `slides/README.md`.
 
 ---
 

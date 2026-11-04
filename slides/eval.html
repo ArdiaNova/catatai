@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>CatatAI — Hasil Evaluasi</title>
+<style>
+  :root{
+    --bg:#0E1116; --panel:#151A21; --text:#F4F7F9; --muted:#8B98A5;
+    --green:#25D366; --line:#232B35; --amber:#F5B942;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1920px;height:1080px;overflow:hidden}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:Inter,"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .slide{
+    position:relative; width:1920px; height:1080px;
+    padding:84px 96px 72px; display:flex; flex-direction:column;
+    background:
+      radial-gradient(900px 500px at 88% -10%, rgba(37,211,102,.10), transparent 60%),
+      radial-gradient(700px 400px at -5% 110%, rgba(37,211,102,.06), transparent 60%),
+      var(--bg);
+  }
+  .top{display:flex;align-items:center;justify-content:space-between}
+  .kicker{
+    display:flex;align-items:center;gap:14px;
+    font-size:22px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--green);
+  }
+  .kicker::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--green)}
+  .event{font-size:20px;color:var(--muted);letter-spacing:.02em}
+  .sub{margin-top:22px;font-size:28px;color:#C7D0D9;display:flex;align-items:center;gap:12px}
+  .sub b{color:var(--text);font-weight:600}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);display:inline-block}
+  .main{flex:1;display:grid;grid-template-columns:620px 1fr;gap:96px;align-items:center;margin-top:36px}
+  .hero .big{
+    font-size:216px;font-weight:800;line-height:.86;letter-spacing:-.045em;
+    color:var(--text);
+  }
+  .hero .big span{color:var(--green);font-size:112px;font-weight:700;letter-spacing:-.02em;margin-left:6px}
+  .hero .label{margin-top:22px;font-size:38px;font-weight:600;color:var(--text)}
+  .hero .note{margin-top:14px;font-size:24px;color:var(--muted);line-height:1.45}
+  .hero .note b{color:#C7D0D9;font-weight:600}
+  .table{display:flex;flex-direction:column;gap:0}
+  .row{
+    display:grid;grid-template-columns:1fr 240px 132px;align-items:center;gap:26px;
+    padding:22px 0;border-bottom:1px solid var(--line);
+  }
+  .row:first-child{border-top:1px solid var(--line)}
+  .row .name{font-size:27px;color:#D7DEE5;font-weight:500}
+  .row .name small{display:block;font-size:19px;color:var(--muted);margin-top:4px;letter-spacing:.01em}
+  .bar{height:12px;border-radius:999px;background:#1D242E;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#1FB85A,var(--green))}
+  .row .val{font-size:30px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+  .row.full .val{color:var(--green)}
+  .foot{
+    display:flex;align-items:center;gap:18px;margin-top:8px;
+  }
+  .chip{
+    display:flex;align-items:baseline;gap:12px;padding:18px 24px;border:1px solid var(--line);
+    border-radius:16px;background:rgba(21,26,33,.7);
+  }
+  .chip .k{font-size:18px;color:var(--muted);letter-spacing:.02em}
+  .chip .v{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+  .chip.warn .v{color:var(--amber)}
+  .spacer{flex:1}
+  .stamp{font-size:18px;color:#6F7C89;text-align:right;line-height:1.5}
+  .stamp b{color:#AEB9C4;font-weight:600}
+</style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top">
+      <div class="kicker">Hasil Evaluasi</div>
+      <div class="event">Meta Global AI Developer Hackathon 2026</div>
+    </div>
+
+    <div class="sub">
+      <b>15 nota sintetis</b><span class="dot"></span>input tidak diubah<span class="dot"></span>ground truth ditulis manual
+    </div>
+
+    <div class="main">
+      <section class="hero">
+        <div class="big">95.7<span>%</span></div>
+        <div class="label">Akurasi field keseluruhan</div>
+        <div class="note">
+          name / qty / subtotal <b>95.1%</b><br>
+          1 nota dengan total tidak cocok <b>ditandai</b>, bukan disimpan diam-diam.
+        </div>
+      </section>
+
+      <section class="table">
+        <div class="row">
+          <div class="name">name / qty / subtotal</div>
+          <div class="bar"><i style="width:95.1%"></i></div>
+          <div class="val">95.1%</div>
+        </div>
+        <div class="row">
+          <div class="name">unit_price</div>
+          <div class="bar"><i style="width:97.6%"></i></div>
+          <div class="val">97.6%</div>
+        </div>
+        <div class="row">
+          <div class="name">total</div>
+          <div class="bar"><i style="width:93.3%"></i></div>
+          <div class="val">93.3%</div>
+        </div>
+        <div class="row full">
+          <div class="name">jenis jual / beli</div>
+          <div class="bar"><i style="width:100%"></i></div>
+          <div class="val">100.0%</div>
+        </div>
+        <div class="row full">
+          <div class="name">jumlah item</div>
+          <div class="bar"><i style="width:100%"></i></div>
+          <div class="val">100.0%</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="foot">
+      <div class="chip"><span class="k">Latency rata-rata</span><span class="v">21.4 s</span></div>
+      <div class="chip"><span class="k">Biaya 15 nota</span><span class="v">$0.2561</span></div>
+      <div class="chip"><span class="k">Jenis transaksi</span><span class="v">15 / 15</span></div>
+      <div class="spacer"></div>
+      <div class="stamp">Sumber: <b>results/eval_report.md</b><br>Input asli, tanpa redaksi</div>
+    </div>
+  </main>
+</body>
+</html>
