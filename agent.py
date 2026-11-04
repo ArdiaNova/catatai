@@ -122,7 +122,7 @@ def handle(channel, ext_id, message_id, kind, text=None, image=None, audio=None)
             return STR[parts[1]]["lang_ok"]
         return S["lang_usage"]
     if low in ("/summary", "/ringkasan", "summary", "ringkasan"):
-        return store.summary_text(store.summary_data(oid), lang)
+        return store.summary_reply(oid, lang)
     if low.strip(" .!,") in ("halo", "hai", "hi", "hello", "pagi", "siang", "malam",
                               "assalamualaikum", "salam", "mulai", "start"):
         return S["welcome"]

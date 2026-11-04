@@ -163,3 +163,27 @@ def summary_text(s, lang="id"):
     if s["unpriced"]:
         out.append(f"⚠️ {s['unpriced']} item belum ada harga, belum dihitung.")
     return "\n".join(out)
+
+
+def latest_tx_date(owner_id):
+    r = sb.table("transactions").select("tx_date").eq("owner_id", owner_id) \
+        .order("tx_date", desc=True).limit(1).execute().data
+    if not r:
+        return None
+    try:
+        return datetime.strptime(str(r[0]["tx_date"])[:10], "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return None
+
+
+def summary_reply(owner_id, lang="id"):
+    """Today's summary; when today is empty, fall back to the latest day with data."""
+    today_s = summary_data(owner_id)
+    if today_s["n"]:
+        return summary_text(today_s, lang)
+    last = latest_tx_date(owner_id)
+    if not last or last == today_s["day"]:
+        return summary_text(today_s, lang)
+    prefix = ("Tidak ada transaksi hari ini. " if lang == "id"
+              else "No transactions today. ")
+    return prefix + summary_text(summary_data(owner_id, last), lang)

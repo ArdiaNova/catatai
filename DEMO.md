@@ -146,12 +146,14 @@ Tersimpan ✅ 1 item, total Rp 60.000.
 **Bot reply:**
 
 ```
-Ringkasan 01-11-2026:
+Tidak ada transaksi hari ini. Ringkasan 01-11-2026:
 Penjualan: Rp 60.000
 Pembelian: Rp 0
 Estimasi untung (penjualan - pembelian): Rp 60.000
 Terlaris: cuci + setrika (10)
 ```
+
+Baris pertama muncul karena tanggal nota (01-11-2026) bukan tanggal rekaman (04-11-2026). Kalau rekaman dilakukan pada tanggal yang sama dengan nota, baris itu tidak muncul.
 
 **Voice-over:**
 > "Dan langsung jadi ringkasan harian: penjualan, pembelian, estimasi untung, produk terlaris."

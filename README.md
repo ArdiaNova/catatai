@@ -25,7 +25,7 @@ CatatAI inverts it: the owner sends a photo, a voice note, or one sentence, and 
 | Short text, e.g. `jual es teh 10 gelas 5rb per gelas` | Parsed into the same structure |
 | Correction, e.g. `yang kedua 5 bukan 3` | Patches the pending record instead of creating a new one |
 | `ya` / `tidak` | Confirms or cancels the pending record |
-| `/ringkasan` | Today's sales, purchases, estimated profit, and top sellers |
+| `/ringkasan` | Today's sales, purchases, estimated profit, and top sellers; falls back to the latest day with data when today is empty |
 
 The agent never silently saves a guessed receipt. It flags low-confidence lines with ⚠️, asks `jual` or `beli` when the type has no explicit clue on the paper, and rejects a total that does not match the line items.
 

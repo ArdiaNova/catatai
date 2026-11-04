@@ -22,7 +22,7 @@ Small shops in Indonesia still run on paper. A laundry writes each order on a no
 
 Bookkeeping apps have not fixed this because they require structured input: choose a date, choose a category, type every line, save. That is more work than the paper, so owners stop after a week.
 
-CatatAI removes the form. The owner opens WhatsApp — the app already on their phone — and sends a photo, a voice note, or one sentence. CatatAI reads it with Meta's multimodal model, shows the parsed items and total, and asks "Benar?" before saving. Corrections happen in normal language: "yang kedua 5 bukan 3". Confirmation is one word: "ya". `/ringkasan` returns today's sales, purchases, estimated profit, and top sellers.
+CatatAI removes the form. The owner opens WhatsApp — the app already on their phone — and sends a photo, a voice note, or one sentence. CatatAI reads it with Meta's multimodal model, shows the parsed items and total, and asks "Benar?" before saving. Corrections happen in normal language: "yang kedua 5 bukan 3". Confirmation is one word: "ya". `/ringkasan` returns today's sales, purchases, estimated profit, and top sellers, falling back to the latest day with data when today is empty.
 
 The agent is deliberately careful. It verifies WhatsApp webhook signatures, makes message handling idempotent, expires pending confirmations after an hour, flags low-confidence lines instead of guessing, checks quantity × unit price against each subtotal, and refuses to default an ambiguous nota to "sale".
 
